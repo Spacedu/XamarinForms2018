@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:nav="clr-namespace:App02_TipoPaginaXF.TipoPagina.Navigation"
+             x:Class="App02_TipoPaginaXF.TipoPagina.Tabbed.Abas">
+    <NavigationPage Title="Item 1">
+        <x:Arguments>
+            <nav:Pagina1 />
+        </x:Arguments>
+    </NavigationPage>
+    
+    <nav:Pagina2 />
+    
+</TabbedPage>
