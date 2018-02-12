@@ -32,6 +32,9 @@ namespace App01_EstudoLayoutXF
         {
             Navigation.PushAsync(new TipoLayout.Absolute.AbsolutePage());
         }
-
+        private void GoPaginaScroll(object sender, EventArgs args)
+        {
+            Navigation.PushAsync(new TipoLayout.Scroll.ScrollPage());
+        }
     }
 }

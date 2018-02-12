@@ -8,6 +8,7 @@
         <Button Text="Grid" Clicked="GoPaginaGrid" />
         <Button Text="Relative" Clicked="GoPaginaRelative" />
         <Button Text="Absolute" Clicked="GoPaginaAbsolute" />
+        <Button Text="Scroll" Clicked="GoPaginaScroll" />
     </StackLayout>
 	
 
