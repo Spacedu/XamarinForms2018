@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ControleXF.Controles.ImagePage">
+    <ContentPage.Content>
+        <StackLayout x:Name="Container">
+            <Image 
+                Source="https://tatimolini.files.wordpress.com/2008/10/logotipo-carrefour.jpg"
+                Aspect="Fill"
+                IsOpaque="True"
+                x:Name="ImageOne"
+                
+                VerticalOptions="FillAndExpand"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

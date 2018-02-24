@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ControleXF.Controles.SliderStepperPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Slider 
+                Minimum="0"
+                Maximum="100"
+                Value="20"
+                
+                ValueChanged="ActionValorMudou"
+                />
+
+            <Label x:Name="SliderResult" />
+
+
+            <Stepper
+                Minimum="0"
+                Maximum="10"
+                Increment="2"
+                Value="4"
+                
+                ValueChanged="ActionValorMudouStepper" />
+
+            <Label x:Name="StepperResult" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

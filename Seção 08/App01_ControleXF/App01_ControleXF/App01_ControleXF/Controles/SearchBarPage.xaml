@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ControleXF.Controles.SearchBarPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- TextChanged="Pesquisar" -->
+            <SearchBar 
+                       CancelButtonColor="Red"
+                       FontSize="24"
+                       FontAttributes="Italic"
+                       HorizontalTextAlignment="Center"
+                       Placeholder="Digite um valor para pesquisa"
+                       PlaceholderColor="Blue"
+                       Text=""
+                       TextColor="Red"
+                       
+                       SearchButtonPressed="PesquisarButton"
+                       ></SearchBar>
+            <StackLayout x:Name="ListResult">
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ControleXF.Controles.ProgressBarPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ProgressBar x:Name="Bar1" Progress="0.2" />
+            <ProgressBar x:Name="Bar2" Progress="0.5" />
+            <ProgressBar x:Name="Bar3" Progress="0.7" />
+
+            <Button Text="Modificar Barras" Clicked="Modificar" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

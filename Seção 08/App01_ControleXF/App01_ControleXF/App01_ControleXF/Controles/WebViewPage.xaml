@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ControleXF.Controles.WebViewPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="EnderecoSite" HorizontalOptions="FillAndExpand"/>
+                <Button Text="OK" Clicked="GoPagina" />
+
+                <Button Text="Próximo" Clicked="GoProximo"/>
+                <Button Text="Voltar" Clicked="GoVoltar"/>
+            </StackLayout>
+            <WebView 
+                x:Name="Navegador"
+                Source="http://www.google.com.br"
+                Navigating="ActionCarregando"
+                Navigated="ActionCarregado"
+                
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand">
+                <!--
+                    HTML - Conteúdo, Texto, Imagem, Vídeo
+                    CSS - Estilo, Aparência.
+                    Javascript - Lógica, Validações.
+                -->
+            </WebView>
+            <Label x:Name="LblStatus" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
