@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_Estilo.Pagina.DynamicStylePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="LblColor">Red</Color>
+            <Style x:Key="Lbl" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="Black" />
+            </Style>
+            <Style x:Key="NewLbl" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!" TextColor="{StaticResource LblColor}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Welcome to Xamarin.Forms!" TextColor="{DynamicResource LblColor}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Label Statica" Style="{StaticResource Lbl}" />
+            <Label Text="Label Dinamica" Style="{DynamicResource Lbl}" />
+            <Button Text="Mudar a cor" Clicked="MudarCor" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

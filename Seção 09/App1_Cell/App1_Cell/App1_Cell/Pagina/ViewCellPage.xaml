@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_Cell.Pagina.ViewCellPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ListaFuncionario">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="20">
+                                <Label Text="{Binding Nome}" FontAttributes="Bold" TextColor="Coral" />
+                                <Label Text=" - " />
+                                <Label Text="{Binding Cargo}" FontAttributes="Bold" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Cadastro">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Comentário" />
+                                <Editor HorizontalOptions="FillAndExpand" HeightRequest="300" />
+                            </StackLayout>
+                        </ViewCell>                        
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
