@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_Mimica.App">
+	<Application.Resources>
+
+        <ResourceDictionary>
+            <!-- Cabecalho -->
+            <Style TargetType="StackLayout" x:Key="Cabecalho">
+                <Setter Property="BackgroundColor" Value="#F2C14E" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+            <Style TargetType="Label" x:Key="CabecalhoTitulo">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+            </Style>
+            
+            <!-- Container -->
+            <Style x:Key="Container"  TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#FAFF7F" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#F78053" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#F78053" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <!-- ContainerEspecial -->
+            <Style x:Key="ContainerEspecial"  TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#FBFFB3" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="OutlineColor" Value="#F78053" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+        </ResourceDictionary>
+		<!-- Application resource dictionary -->
+
+	</Application.Resources>
+</Application>

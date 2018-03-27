@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_Mimica.View.Util.Cabecalho">
+  <ContentView.Content>
+      <StackLayout Orientation="Horizontal" Style="{StaticResource Cabecalho}">
+        <Label Text="Jogo de Mímica" Style="{StaticResource CabecalhoTitulo}" />
+            <Label Text="Sair" HorizontalOptions="EndAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SairEvento" />
+                </Label.GestureRecognizers>
+            </Label>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

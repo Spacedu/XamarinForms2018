@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cab="clr-namespace:App1_Mimica.View.Util"
+             x:Class="App1_Mimica.View.Inicio">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <cab:Cabecalho />
+            <StackLayout Style="{StaticResource Container}">
+                <Label Text="{Binding MsgErro}" TextColor="Red" />
+                <Label Text="Nome do Grupo 1" />
+                <Entry Placeholder="(Opcional)" Text="{Binding Jogo.Grupo1.Nome}"/>
+                <Label Text="Nome do Grupo 2" />
+                <Entry Placeholder="(Opcional)" Text="{Binding Jogo.Grupo2.Nome}"/>
+                <Label Text="Nível" />
+                <Picker SelectedItem="{Binding Jogo.Nivel}" SelectedIndex="{Binding Jogo.NivelNumerico}">
+                    <Picker.Items>
+                        <x:String>Aleatório</x:String>
+                        <x:String>Fácil</x:String>
+                        <x:String>Médio</x:String>
+                        <x:String>Difícil</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Tempo de cada palavra(seg)" />
+                <Entry Text="{Binding Jogo.TempoPalavra}" />
+                <Label Text="Rodadas" />
+                <Entry Text="{Binding Jogo.Rodadas}" />
+
+                <Button Text="Iniciar" Command="{Binding IniciarCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
