@@ -1,0 +1,7 @@
+Texto/Borda: #F78053
+Fundo: #FAFF7F
+Topo: #F2C14E
+Fontes Branco e Preto.
+Acertou: #00B22D
+Errou: #FF4000
+Fundo Quadrado:#FBFFB3

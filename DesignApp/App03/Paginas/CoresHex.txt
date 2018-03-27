@@ -1,0 +1,5 @@
+Amarelo: #FFC926
+Azul Escuro: #0D1F2D
+
+Azul Quadrado 2: #25567E
+Azul Quadrado 3: #4E93CB

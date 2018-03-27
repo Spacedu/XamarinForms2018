@@ -1,0 +1,11 @@
+Titulo-Logo: #F24333
+Subtitulo: #F8A199
+
+Vagas:
+Titulo: #1B1B1E
+Empresa: #44444D
+Cidade: #737380
+Fundo: #EEEEEE
+Borda(Frame): #DDDDDD
+
+Botão Laranja: #FF7F00
