@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App02_Xamarin.Pages.Xamarin">
     <ContentPage.Content>
-        <StackLayout Spacing="0">
+        <ScrollView>
+            <StackLayout Spacing="0">
             <StackLayout BackgroundColor="#FFC926" Padding="30">
                 <Image Source="Logo.png" HorizontalOptions="Center" VerticalOptions="Center"/>
             </StackLayout>
@@ -29,5 +30,6 @@
                 <Label Text="Comprada pela Microsoft em 2016 \n Desenvolve tecnologia multiplataformaque funcionam principalmente no Android, iOS e UWP." />
             </StackLayout>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

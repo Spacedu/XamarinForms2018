@@ -19,13 +19,14 @@ namespace App02_Xamarin.Master
 
         private void GoPaginaPerfil1(object sender, EventArgs args)
         {
-            Detail = new Pages.Perfil1();
-            
+            Detail = new NavigationPage(new Pages.Perfil1());
+            IsPresented = false;
         }
 
         private void GoPaginaXamarin(object sender, EventArgs args)
         {
-            Detail = new Pages.Xamarin();
+            Detail = new NavigationPage(new Pages.Xamarin());
+            IsPresented = false;
         }
 
     }

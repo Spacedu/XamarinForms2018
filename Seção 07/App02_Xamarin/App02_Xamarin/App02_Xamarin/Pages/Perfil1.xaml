@@ -4,6 +4,7 @@
              x:Class="App02_Xamarin.Pages.Perfil1">
     <ContentPage.Content>
         <StackLayout Spacing="0">
+            <ScrollView>
             <RelativeLayout VerticalOptions="Start" HeightRequest="300">
                 <Image Source="Fundo.png" 
                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
@@ -39,8 +40,11 @@
                 </StackLayout>
             </Grid>
             <StackLayout Padding="30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <Label Text="Miguel de Icaza nasceu na Cidade do México e estudou na Universidade Nacional Autônoma do México UNAM. Ele começou a escrever software em 1992.                                                        Icaza começou o projeto GNOME em Agosto de 1997. Ele e Federico Mena, criaram um completo sistema de desktop livre e um componente para sistemas GNU/Linux. Antes disso, Icaza já havia trabalhado em um gerente de arquivos, o Midnight Commander, assim como no núcleo Linux." />
+                <Label Text="Miguel de Icaza nasceu na Cidade do México e estudou na Universidade Nacional Autônoma do México UNAM. Ele começou a escrever software em 1992.
+                            
+                            Icaza começou o projeto GNOME em Agosto de 1997. Ele e Federico Mena, criaram um completo sistema de desktop livre e um componente para sistemas GNU/Linux. Antes disso, Icaza já havia trabalhado em um gerente de arquivos, o Midnight Commander, assim como no núcleo Linux." />
             </StackLayout>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
