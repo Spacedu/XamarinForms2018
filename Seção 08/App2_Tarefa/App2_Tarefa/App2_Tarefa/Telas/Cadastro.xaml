@@ -12,8 +12,8 @@
                     <Image>
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
-                                <On Platform="Android, iOS" Value="4.png" />
-                                <On Platform="UWP" Value="Resources/4.png" />
+                                <On Platform="Android, iOS" Value="p4.png" />
+                                <On Platform="UWP" Value="Resources/p4.png" />
                             </OnPlatform>
                         </Image.Source>
                     </Image>
@@ -26,8 +26,8 @@
                     <Image>
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
-                                <On Platform="Android, iOS" Value="3.png" />
-                                <On Platform="UWP" Value="Resources/3.png" />
+                                <On Platform="Android, iOS" Value="p3.png" />
+                                <On Platform="UWP" Value="Resources/p3.png" />
                             </OnPlatform>
                         </Image.Source>
                     </Image>
@@ -40,8 +40,8 @@
                     <Image>
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
-                                <On Platform="Android, iOS" Value="2.png" />
-                                <On Platform="UWP" Value="Resources/2.png" />
+                                <On Platform="Android, iOS" Value="p2.png" />
+                                <On Platform="UWP" Value="Resources/p2.png" />
                             </OnPlatform>
                         </Image.Source>
                     </Image>
@@ -54,8 +54,8 @@
                     <Image>
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
-                                <On Platform="Android, iOS" Value="1.png" />
-                                <On Platform="UWP" Value="Resources/1.png" />
+                                <On Platform="Android, iOS" Value="p1.png" />
+                                <On Platform="UWP" Value="Resources/p1.png" />
                             </OnPlatform>
                         </Image.Source>
                     </Image>

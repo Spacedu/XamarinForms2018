@@ -136,14 +136,14 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="Resources\1.png" />
-    <Content Include="Resources\2.png" />
-    <Content Include="Resources\3.png" />
-    <Content Include="Resources\4.png" />
     <Content Include="Resources\AddBotao.png" />
     <Content Include="Resources\CheckOff.png" />
     <Content Include="Resources\CheckOn.png" />
     <Content Include="Resources\Delete.png" />
+    <Content Include="Resources\p1.png" />
+    <Content Include="Resources\p2.png" />
+    <Content Include="Resources\p3.png" />
+    <Content Include="Resources\p4.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

@@ -59,7 +59,7 @@ namespace App2_Tarefa.Telas
             Image Prioridade = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile(tarefa.Prioridade + ".png") };
             if (Device.RuntimePlatform == Device.UWP)
             {
-                Prioridade.Source = ImageSource.FromFile("Resources/" + tarefa.Prioridade + ".png");
+                Prioridade.Source = ImageSource.FromFile("Resources/p" + tarefa.Prioridade + ".png");
             }
 
             View StackCentral = null;
