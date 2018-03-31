@@ -13,7 +13,7 @@
                     
                     BackgroundColor="White" />
             <Button Text="2 Botão" />
-            <Button BackgroundColor="Transparent" Image="push-button.png" HorizontalOptions="Start" />
+            <Button BackgroundColor="Transparent" Image="pushbutton.png" HorizontalOptions="Start" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

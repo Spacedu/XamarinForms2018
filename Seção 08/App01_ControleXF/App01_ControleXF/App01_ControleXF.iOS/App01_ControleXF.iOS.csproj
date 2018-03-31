@@ -129,9 +129,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\push-button.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\usb%403x.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -139,5 +136,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\usb%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pushbutton.png" />
   </ItemGroup>
 </Project>
