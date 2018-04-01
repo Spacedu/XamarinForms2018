@@ -56,10 +56,10 @@ namespace App2_Tarefa.Telas
             Delete.GestureRecognizers.Add(DeleteTap);
 
 
-            Image Prioridade = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile(tarefa.Prioridade + ".png") };
+            Image Prioridade = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("p" + tarefa.Prioridade + ".png") };
             if (Device.RuntimePlatform == Device.UWP)
             {
-                Prioridade.Source = ImageSource.FromFile("Resources/" + tarefa.Prioridade + ".png");
+                Prioridade.Source = ImageSource.FromFile("Resources/p" + tarefa.Prioridade + ".png");
             }
 
             View StackCentral = null;
