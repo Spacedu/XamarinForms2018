@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>App2_ListaBrasil.Droid</RootNamespace>
     <AssemblyName>App2_ListaBrasil.Android</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -79,14 +79,11 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\App2_ListaBrasil\App2_ListaBrasil.csproj">
       <Project>{4BC64FAB-2B18-4FD2-AE99-091CFB668943}</Project>
       <Name>App2_ListaBrasil</Name>
     </ProjectReference>
   </ItemGroup>
-
-
- <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
