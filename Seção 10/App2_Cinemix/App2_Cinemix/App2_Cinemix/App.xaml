@@ -33,18 +33,32 @@
             </Style>
             <Style x:Key="TituloFilme" TargetType="Label" BasedOn="{StaticResource SubtituloApp}">
                 <Setter Property="TextColor" Value="#FFFFFF" />
-                <Setter Property="FontSize" Value="64" />
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android, iOS" Value="24" />
+                            <On Platform="UWP" Value="64" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
             <Style x:Key="Fundo" TargetType="Image">
-                <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="Aspect" Value="AspectFit" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
             </Style>
 
             <Style x:Key="Poster" TargetType="Image">
-                <Setter Property="Margin" Value="0, 20, 0, 0" />
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android, iOS" Value="0, 50, 0, 0" />
+                            <On Platform="UWP" Value="0, 20, 0, 0" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Start" />
             </Style>
@@ -52,7 +66,7 @@
             <Style x:Key="Sinopse" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="460" />
-                <Setter Property="Margin" Value="0, 310, 0, 0" />
+                <Setter Property="Margin" Value="0, 10, 0, 0" />
                 <Setter Property="FontSize" Value="12" />
                 <Setter Property="FontFamily" Value="Segoe UI" />
                 <Setter Property="TextColor" Value="#947AC4" />

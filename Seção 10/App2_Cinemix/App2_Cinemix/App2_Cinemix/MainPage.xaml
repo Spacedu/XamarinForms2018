@@ -26,27 +26,28 @@
                         </Grid.RowDefinitions>
 
                         <Image Source="Fundo.png" Style="{StaticResource Fundo}" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0" />
-                        <Image Source="Poster.png" Style="{StaticResource Poster}" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0" />
+                        <StackLayout Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0">
+                            <Image Source="Poster.png" Style="{StaticResource Poster}" />
 
-                        <Label Grid.ColumnSpan="2" Text="Após a morte do rei T'Chaka (John Kani), o príncipe T'Challa (Chadwick Boseman) retorna a Wakanda para a cerimônia de coroação. Nela são reunidas as cinco tribos que compõem o reino, sendo que uma delas, os Jabari, não apoia o atual governo. T'Challa logo recebe o apoio de Okoye (Danai Gurira), a chefe da guarda de Wakanda, da irmã Shuri (Laetitia Wright), que coordena a área tecnológica do reino, e também de Nakia (Lupita Nyong'o), a grande paixão do atual Pantera Negra, que não quer se tornar rainha. Juntos, eles estão à procura de Ulysses Klaue (Andy Serkis), que roubou de Wakanda um punhado de vibranium, alguns anos atrás."
-                               Style="{StaticResource Sinopse}"
-                               />
+                            <Label Text="Após a morte do rei T'Chaka (John Kani), o príncipe T'Challa (Chadwick Boseman) retorna a Wakanda para a cerimônia de coroação. Nela são reunidas as cinco tribos que compõem o reino, sendo que uma delas, os Jabari, não apoia o atual governo. T'Challa logo recebe o apoio de Okoye (Danai Gurira), a chefe da guarda de Wakanda, da irmã Shuri (Laetitia Wright), que coordena a área tecnológica do reino, e também de Nakia (Lupita Nyong'o), a grande paixão do atual Pantera Negra, que não quer se tornar rainha. Juntos, eles estão à procura de Ulysses Klaue (Andy Serkis), que roubou de Wakanda um punhado de vibranium, alguns anos atrás."
+                                   Style="{StaticResource Sinopse}"
+                                   />
 
-                        <StackLayout  Grid.ColumnSpan="2" Style="{StaticResource Horarios}">
-                            <StackLayout Style="{StaticResource Horario}">
-                                <Label Text="10:30h" TextColor="White" />
-                            </StackLayout>
-                            <StackLayout Style="{StaticResource Horario}">
-                                <Label Text="10:30h" TextColor="White" />
-                            </StackLayout>
-                            <StackLayout Style="{StaticResource Horario}">
-                                <Label Text="10:30h" TextColor="White" />
-                            </StackLayout>
-                            <StackLayout Style="{StaticResource Horario}">
-                                <Label Text="10:30h" TextColor="White" />
+                            <StackLayout Style="{StaticResource Horarios}">
+                                <StackLayout Style="{StaticResource Horario}">
+                                    <Label Text="10:30h" TextColor="White" />
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource Horario}">
+                                    <Label Text="10:30h" TextColor="White" />
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource Horario}">
+                                    <Label Text="10:30h" TextColor="White" />
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource Horario}">
+                                    <Label Text="10:30h" TextColor="White" />
+                                </StackLayout>
                             </StackLayout>
                         </StackLayout>
-
                         <Image Grid.ColumnSpan="2" Source="FundoValor.png" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" />
                         <StackLayout HorizontalOptions="End" Grid.Row="1" Grid.Column="0" Spacing="0" Padding="10">
                             <Label Text="MEIA" Style="{StaticResource SubtituloApp}" />
