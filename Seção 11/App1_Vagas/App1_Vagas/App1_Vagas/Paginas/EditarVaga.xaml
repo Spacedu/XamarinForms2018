@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1_Vagas.Paginas.EditarVaga">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
             <Entry x:Name="NomeVaga" Placeholder="Vaga" />
             <Entry x:Name="Empresa" Placeholder="Empresa" />
@@ -22,5 +23,6 @@
 
             <Button Text="Salvar" Clicked="SalvarAction"/>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
