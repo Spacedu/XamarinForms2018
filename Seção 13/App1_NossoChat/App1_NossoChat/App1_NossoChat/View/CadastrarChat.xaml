@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_NossoChat.View.CadastrarChat"
+             BackgroundColor="#5ED055">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding nome}" Placeholder="Nome do chat" PlaceholderColor="#5ED055" BackgroundColor="White" TextColor="#5ED055"/>
+            <Button BackgroundColor="Transparent" Text="Cadastrar" TextColor="White" Command="{Binding CadastrarCommand}" />
+            <Label Text="{Binding mensagem}" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

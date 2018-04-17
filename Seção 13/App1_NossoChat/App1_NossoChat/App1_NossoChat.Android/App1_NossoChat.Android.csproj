@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12DC61B8-933C-437B-B378-7C4CBE61E261}</ProjectGuid>
+    <ProjectGuid>{24C0E327-B1B2-49BF-99E8-C560165DE0C4}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>App1_Mimica.Droid</RootNamespace>
-    <AssemblyName>App1_Mimica.Android</AssemblyName>
+    <RootNamespace>App1_NossoChat.Droid</RootNamespace>
+    <AssemblyName>App1_NossoChat.Android</AssemblyName>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -80,10 +80,19 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App1_Mimica\App1_Mimica.csproj">
-      <Project>{16EA8F69-77E2-4704-A3F2-44C25F60214D}</Project>
-      <Name>App1_Mimica</Name>
+    <ProjectReference Include="..\App1_NossoChat\App1_NossoChat.csproj">
+      <Project>{8366FA77-8A2B-4EF6-A518-F5BD488C338A}</Project>
+      <Name>App1_NossoChat</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
