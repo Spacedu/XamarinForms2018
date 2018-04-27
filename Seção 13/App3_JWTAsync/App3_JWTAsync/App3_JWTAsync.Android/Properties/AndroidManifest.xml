@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.App3_JWTAsync">
+	<uses-sdk android:minSdkVersion="15" />
+	<application android:label="App3_JWTAsync.Android"></application>
+</manifest>

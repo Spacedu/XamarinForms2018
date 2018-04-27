@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3_JWTAsync"
+             x:Class="App3_JWTAsync.MainPage">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Entry x:Name="nome" />
+            <Entry x:Name="password" />
+        </StackLayout>
+        <Button Text="GetToken" Clicked="GetTokenAction"/>
+        <Label x:Name="LblToken" />
+
+        <Button Text="Verificar" Clicked="VerificarAction"/>
+        <Label x:Name="LblResultado" />
+
+    </StackLayout>
+
+</ContentPage>
