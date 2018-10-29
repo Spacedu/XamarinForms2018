@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App2_Tarefa.Telas.Inicio">
+             x:Class="App2_Tarefa.Telas.Inicio"
+             NavigationPage.HasNavigationBar="False"
+             >
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout BackgroundColor="Blue" HeightRequest="250">
+            <StackLayout BackgroundColor="#2196F3" HeightRequest="250">
                 <Label Text="Meu Dia" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" />
                 <Label Text="" x:Name="DataHoje" HorizontalOptions="Start" VerticalOptions="End" TextColor="White"/>
             </StackLayout>
