@@ -6,14 +6,36 @@ using App1_NossoChat.Model;
 using App1_NossoChat.Util;
 using App1_NossoChat.Service;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace App1_NossoChat.ViewModel
 {
     public class MensagemViewModel : INotifyPropertyChanged
     {
-        private StackLayout SL;
+        private bool _carregando;
         private Chat chat;
         private List<Mensagem> _mensagens;
+        private bool _mensagemErro;
+
+        public bool MensagemErro
+        {
+            get { return _mensagemErro; }
+            set
+            {
+                _mensagemErro = value;
+                OnPropertyChanged("MensagemErro");
+            }
+        }
+        public bool Carregando
+        {
+            get { return _carregando; }
+            set
+            {
+                _carregando = value;
+                OnPropertyChanged("Carregando");
+            }
+        }
+
         public List<Mensagem> Mensagens
         {
             get { return _mensagens; }
@@ -21,9 +43,6 @@ namespace App1_NossoChat.ViewModel
             {
                 _mensagens = value;
                 OnPropertyChanged("Mensagens");
-                if(value != null) { 
-                    ShowOnScreen();
-                }
             }
         }
 
@@ -41,23 +60,42 @@ namespace App1_NossoChat.ViewModel
         public Command BtnEnviarCommand { get; set; }
         public Command AtualizarCommand { get; set; }
 
-        public MensagemViewModel(Chat chat, StackLayout SLMensagemContainer)
+        public MensagemViewModel(Chat chat)
         {
             this.chat = chat;
-            SL = SLMensagemContainer;
-            Atualizar();
+            Task.Run(()=>Atualizar());
             BtnEnviarCommand = new Command(BtnEnviar);
-            AtualizarCommand = new Command(Atualizar);
+            AtualizarCommand = new Command(AtualizarSemAsync);
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () => {
-                Atualizar();
+                Task.Run(()=>AtualizarSemTelaCarregando());
                 return true;
             });
         }
-        private void Atualizar()
+        private void AtualizarSemAsync()
         {
-            Mensagens = ServiceWS.GetMensagensChat(chat);
+            Task.Run(() => Atualizar());
         }
+        private async Task Atualizar()
+        {
+            try {
+                MensagemErro = false;
+                Carregando = true;
+                Mensagens = await ServiceWS.GetMensagensChat(chat);
+                Carregando = false;
+            }catch(Exception e)
+            {
+                Carregando = false;
+                MensagemErro = true;
+            }
+        }
+
+
+        private async Task AtualizarSemTelaCarregando()
+        {
+            Mensagens = await ServiceWS.GetMensagensChat(chat);
+        }
+
         private void BtnEnviar()
         {
             var msg = new Mensagem() {
@@ -66,51 +104,10 @@ namespace App1_NossoChat.ViewModel
                 id_chat = chat.id
             };
             ServiceWS.InsertMensagem(msg);
-            Atualizar();
+            Task.Run(() => Atualizar());
             TxtMensagem = string.Empty;
         }
 
-        private void ShowOnScreen()
-        {
-            var usuario = UsuarioUtil.GetUsuarioLogado();
-            SL.Children.Clear();
-            foreach (var msg in Mensagens)
-            {
-                if(msg.usuario.id == usuario.id)
-                {
-                    SL.Children.Add(CriarMensagemPropria(msg));
-                }
-                else
-                {
-                    SL.Children.Add(CriarMensagemOutrosUsuarios(msg));
-                }                
-            }
-        }
-
-        
-                    
-
-        private Xamarin.Forms.View CriarMensagemPropria(Mensagem mensagem)
-        {
-            var layout = new StackLayout() { Padding = 5, BackgroundColor = Color.FromHex("#5ED055"), HorizontalOptions = LayoutOptions.End };
-            var label = new Label() { TextColor = Color.White, Text = mensagem.mensagem };
-
-            layout.Children.Add(label);
-            return layout;
-        }
-        private Xamarin.Forms.View CriarMensagemOutrosUsuarios(Mensagem mensagem)
-        {
-            var labelNome = new Label() { Text = mensagem.usuario.nome, FontSize = 10, TextColor = Color.FromHex("#5ED055") } ;
-            var labelMensagem = new Label() { Text = mensagem.mensagem, TextColor = Color.FromHex("#5ED055") };
-
-            var SL = new StackLayout();
-            SL.Children.Add(labelNome);
-            SL.Children.Add(labelMensagem);
-            var frame = new Frame() { OutlineColor = Color.FromHex("#5ED055"), CornerRadius = 0, HorizontalOptions = LayoutOptions.Start };
-            frame.Content = SL;
-
-            return frame;
-        }
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string PropertyName)
         {

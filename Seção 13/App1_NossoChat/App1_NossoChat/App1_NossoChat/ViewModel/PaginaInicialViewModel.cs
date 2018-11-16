@@ -11,16 +11,37 @@ namespace App1_NossoChat.ViewModel
 {
     public class PaginaInicialViewModel : INotifyPropertyChanged
     {
+        private bool _carregando;
+        private bool _mensagemErro;
+        
         private string _nome;
         private string _senha;
         private string _mensagem;
-        
 
+        public bool Carregando
+        {
+            get { return _carregando; }
+            set
+            {
+                _carregando = value;
+                OnPropertyChanged("Carregando");
+            }
+        }
+        public bool MensagemErro
+        {
+            get { return _mensagemErro; }
+            set
+            {
+                _mensagemErro = value;
+                OnPropertyChanged("MensagemErro");
+            }
+        }
+        
         public string Nome {
             get { return _nome; }
             set {
                 _nome = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Nome"));
+                OnPropertyChanged("Nome");
             }
         }
         public string Senha
@@ -29,7 +50,7 @@ namespace App1_NossoChat.ViewModel
             set
             {
                 _senha = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Senha"));
+                OnPropertyChanged("Senha");
             }
         }
         public string Mensagem
@@ -38,7 +59,7 @@ namespace App1_NossoChat.ViewModel
             set
             {
                 _mensagem = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Mensagem"));
+                OnPropertyChanged("Mensagem");
             }
         }
 
@@ -49,27 +70,42 @@ namespace App1_NossoChat.ViewModel
             AcessarCommand = new Command(Acessar);
         }
 
-        private void Acessar()
+        private async void Acessar()
         {
-            var user = new Usuario();
-            user.nome = Nome;
-            user.password = Senha;
+            try {
+                MensagemErro = false;
+                Carregando = true;
+                var user = new Usuario();
+                user.nome = Nome;
+                user.password = Senha;
 
-            var usuarioLogado = ServiceWS.GetUsuario(user);
-            if(usuarioLogado == null)
-            {
-                Mensagem = "Senha incorreta.";
+                var usuarioLogado = await ServiceWS.GetUsuario(user);
+                if (usuarioLogado == null)
+                {
+                    Mensagem = "Senha incorreta.";
+                    Carregando = false;
+                }
+                else
+                {
+                    UsuarioUtil.SetUsuarioLogado(usuarioLogado);
+                    App.Current.MainPage = new NavigationPage(new View.Chats()) { BarBackgroundColor = Color.FromHex("#5ED055"), BarTextColor = Color.White };
+                }
+            } catch (Exception e) {
+                MensagemErro = true;
+            } finally {
+                Carregando = false;
             }
-            else
-            {
-                UsuarioUtil.SetUsuarioLogado(usuarioLogado);
-                //App.Current.Properties["LOGIN"] = JsonConvert.SerializeObject(usuarioLogado);
-                App.Current.MainPage = new NavigationPage(new View.Chats()) { BarBackgroundColor = Color.FromHex("#5ED055"), BarTextColor = Color.White };
 
-            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string PropertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
+            }
+        }
 
     }
 }

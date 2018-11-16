@@ -4,17 +4,28 @@
              x:Class="App1_NossoChat.View.PaginaInicial"
              BackgroundColor="#5ED055">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="NossoChat" TextColor="White" />
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Label Text="NossoChat" TextColor="White" />
 
-            <StackLayout
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand">
-                <Entry Text="{Binding Nome}" BackgroundColor="White" TextColor="#5ED055" />
-                <Entry Text="{Binding Senha}" IsPassword="True" BackgroundColor="White" TextColor="#5ED055" />
-                <Button BackgroundColor="Transparent" TextColor="White" Text="Acessar/Cadastrar" Command="{Binding AcessarCommand}" />
-                <Label Text="{Binding Mensagem}" TextColor="White" />
+                <StackLayout
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand">
+                    <Entry Text="{Binding Nome}" BackgroundColor="White" TextColor="#5ED055" />
+                    <Entry Text="{Binding Senha}" IsPassword="True" BackgroundColor="White" TextColor="#5ED055" />
+                    <Button BackgroundColor="Transparent" TextColor="White" Text="Acessar/Cadastrar" Command="{Binding AcessarCommand}" />
+                    <Label Text="{Binding Mensagem}" TextColor="White" />
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+            <StackLayout BackgroundColor="#5ED055" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" IsVisible="{Binding Carregando}">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator IsRunning="True" Color="#FFFFFF" />
+                    <Label TextColor="#FFFFFF" Text="Logando..." />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout  BackgroundColor="#FF4444" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,1,1,0.1" IsVisible="{Binding MensagemErro}" Padding="7" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label Text="Ocorreu problema no processamento! Tente novamente" TextColor="#FFFFFF" />
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

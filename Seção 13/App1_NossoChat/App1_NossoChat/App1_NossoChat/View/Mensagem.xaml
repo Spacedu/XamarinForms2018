@@ -1,30 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:util="clr-namespace:App1_NossoChat.Util"
              x:Class="App1_NossoChat.View.Mensagem">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="minhasMensagensTemplate">
+                <ViewCell>
+                    <StackLayout Padding="10" Margin="10" BackgroundColor="#5ED055" HorizontalOptions="End">
+                        <Label Text="{Binding mensagem}" TextColor="White" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="mensagensOutrasPessoasTemplate">
+                <ViewCell>
+                    <Frame OutlineColor="#5ED055" CornerRadius="0" Padding="10" Margin="10" HorizontalOptions="Start">
+                        <StackLayout>
+                            <Label Text="{Binding usuario.nome}" FontSize="10" TextColor="#5ED055"/>
+                            <Label Text="{Binding mensagem}" TextColor="#5ED055"/>
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+
+            <util:MensagemDataTemplateSelector x:Key="MensagemDataTemplateSelector"
+                MensagensOutrasPessoasTemplate="{StaticResource mensagensOutrasPessoasTemplate}"
+                MinhasMensagensTemplate="{StaticResource minhasMensagensTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Atualizar mensagens" Icon="refresh.png" Command="{Binding AtualizarCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        
-        <StackLayout>
-            <ScrollView>
-                <StackLayout x:Name="SLMensagemContainer">
-                    <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="Start">
-                        <StackLayout>
-                            <Label Text="Felipe123" FontSize="10" TextColor="#5ED055"/>
-                            <Label Text="Olá amigos tudo bem!" TextColor="#5ED055"/>
-                        </StackLayout>
-                    </Frame>
-                    <StackLayout Padding="5" BackgroundColor="#5ED055" HorizontalOptions="End">
-                        <Label Text="Ola mundo!" TextColor="White" />
-                    </StackLayout>
+        <AbsoluteLayout>
+
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <ListView ItemsSource="{Binding Mensagens}" HasUnevenRows="True" VerticalOptions="FillAndExpand" ItemTemplate="{StaticResource MensagemDataTemplateSelector}">
+                </ListView>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                    <Entry Text="{Binding TxtMensagem}" Placeholder="Mensagem" BackgroundColor="White" TextColor="#5ED055" HorizontalOptions="FillAndExpand" />
+                    <Button Command="{Binding BtnEnviarCommand}" Text="Enviar" BackgroundColor="#5ED055" TextColor="White" />
                 </StackLayout>
-            </ScrollView>
-            <StackLayout Orientation="Horizontal">
-                <Entry Text="{Binding TxtMensagem}" Placeholder="Mensagem" BackgroundColor="White" TextColor="#5ED055" HorizontalOptions="FillAndExpand" />
-                <Button Command="{Binding BtnEnviarCommand}" Text="Enviar" BackgroundColor="#5ED055" TextColor="White" />
             </StackLayout>
-        </StackLayout>
+            <StackLayout BackgroundColor="#5ED055" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" IsVisible="{Binding Carregando}" x:Name="SLCarregando">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator IsRunning="True" Color="#FFFFFF" />
+                    <Label TextColor="#FFFFFF" Text="Carregando mensagens..." />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout  BackgroundColor="#FF4444" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0.9,1,0.1" IsVisible="{Binding MensagemErro}" Padding="7" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label Text="Ocorreu problema no processamento! Tente novamente (Clique em atualizar)" TextColor="#FFFFFF" />
+            </StackLayout>
+            
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

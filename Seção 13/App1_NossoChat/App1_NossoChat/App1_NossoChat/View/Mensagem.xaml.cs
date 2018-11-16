@@ -17,7 +17,7 @@ namespace App1_NossoChat.View
 		{
 			InitializeComponent ();
 
-            BindingContext = new ViewModel.MensagemViewModel(chat, SLMensagemContainer);
+            BindingContext = new ViewModel.MensagemViewModel(chat);
 		}
 	}
 }
