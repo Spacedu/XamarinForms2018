@@ -15,7 +15,7 @@ namespace App1_Mimica.Armazenamento
             new string[] { "Olho", "Língua", "Chinelo", "Milho", "Penalti", "Bola", "Ping-pong" },
 
             //Med. Pontuação 3
-            new string[] { "Carpinteiro", "Amerelo", "Limão", "Abelha" },
+            new string[] { "Carpinteiro", "Amarelo", "Limão", "Abelha" },
 
             //Dif. Pontuação 5
             new string[] { "Cisterna", "Lanterna", "Batman vs Superman", "Notebook" },
