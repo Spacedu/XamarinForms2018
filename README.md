@@ -1,4 +1,4 @@
-*** Curso - Xamarin Forms 2018
+**** Curso - Xamarin Forms 2018***
 Este é o código-fonte do curso de Xamarin Forms 2018.
 
 O código-fonte aqui presente serve para ensinar algumas estruturas básicas do Xamarin Forms. Este projeto tem o objetivo de ensinar Xamarin Forms focando na criação de Apps Android, iOS e UWP usando as APIs da plataforma Xamarin. Abaixo listo os recursos utilizados:
